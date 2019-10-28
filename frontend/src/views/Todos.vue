@@ -1,10 +1,10 @@
 <template>
   <div>
     <Todo
-      v-for="todo in todos"
-      :key="todo.title"
+      v-for="(todo, index) in todos"
+      :key="index"
       :title="todo.title"
-      :content="todo.content"
+      :content="todo.msg"
     />
   </div>
 </template>
@@ -17,12 +17,7 @@ export default {
   },
   data() {
     return {
-      todos: [
-        {
-          title: "Title",
-          content: "Content"
-        }
-      ]
+      todos: []
     };
   },
   async created() {
